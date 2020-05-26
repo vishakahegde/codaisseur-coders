@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
 
+import "./PostsFeed.css";
+
 const API_URL = `https://codaisseur-coders-network.herokuapp.com`;
 
 export default function PostsFeed() {
@@ -39,14 +41,34 @@ export default function PostsFeed() {
       {/* TODO: render the list of posts */}
       {data.posts.map((post) => {
         return (
-          <div>
-            <h2>{post.title}</h2>
+          <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p className="meta">
+              {moment(post.createdAt).format("DD-MM-YYYY")} &bull;{" "}
+              {/* {post.post_likes.length} likes &bull;{" "} */}
+              <span className="tags">
+                {post.tags.map((tag) => {
+                  return (
+                    <React.Fragment key={tag.id}>
+                      <span className="Tag">{tag.tag}</span>{" "}
+                    </React.Fragment>
+                  );
+                })}
+              </span>
+            </p>
           </div>
         );
       })}
 
       {/* TODO: show a loading indicator when the posts are loading,
         or else a button to load more posts if not */}
+      <p>
+        {data.loading ? (
+          <em>Loading...</em>
+        ) : (
+          <button onClick={fetchNext5Posts}>Load more</button>
+        )}
+      </p>
     </div>
   );
 }
