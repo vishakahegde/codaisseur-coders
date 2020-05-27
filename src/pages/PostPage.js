@@ -6,7 +6,7 @@ import { selectPostAndComments } from "../store/postPage/selectors";
 
 export default function PostPage() {
   const { id } = useParams();
-  const data = useSelector(selectPostAndComments);
+  const postData = useSelector(selectPostAndComments);
 
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ export default function PostPage() {
     <div>
       <h1>Post Page</h1>
       <h2>{id}</h2>
-      {data === null ? <h3>Loading...</h3> : <h3>Done!</h3>}
+      {!postData ? <h3>Loading...</h3> : <h3>Done!</h3>}
     </div>
   );
 }
