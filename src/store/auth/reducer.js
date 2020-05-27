@@ -3,6 +3,7 @@ const initialState = {
   accessToken: null,
 };
 
+//dummy reducer
 export function AuthSliceReducer(state = initialState, action) {
   switch (action.type) {
     default: {

@@ -1,6 +1,6 @@
 // src/store/auth/actions.js
 
-// A thunk action creator
+// A thunk action creato
 export function login(email, password) {
   // Return the thunk itself, i.e. a function
   return function thunk(dispatch, getState) {

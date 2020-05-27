@@ -36,7 +36,7 @@ export default function LoginPage() {
           </label>
         </p>
         <p>
-          <button type="submit">Login</button>
+          <button type="submit">Logi</button>
         </p>
       </form>
     </div>
