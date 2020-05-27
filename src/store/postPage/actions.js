@@ -13,10 +13,7 @@ export function postFullyFetched(data) {
   // TODO
   return {
     type: "postPage/postFullyFetched",
-    payload: {
-      post: data.post,
-      comments: data.comments,
-    },
+    payload: data,
   };
 }
 
