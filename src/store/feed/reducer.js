@@ -5,13 +5,13 @@ const initialState = {
 
 export default function FeedSliceReducer(state = initialState, action) {
   switch (action.type) {
-    case "startLoading": {
+    case "feed/startLoading": {
       return {
         ...state,
         loading: true,
       };
     }
-    case "postsFetched": {
+    case "feed/postsFetched": {
       return {
         ...state,
         loading: false,
